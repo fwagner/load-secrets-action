@@ -37,7 +37,7 @@ unset_prev_secrets() {
 install_op_cli() {
   if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     curl -sSfLo op.zip "https://cache.agilebits.com/dist/1P/op2/pkg/v2.10.0-beta.02/op_linux_amd64_v2.10.0-beta.02.zip"
-    unzip -od /usr/local/bin/ op.zip && rm op.zip
+    sudo unzip -od /usr/local/bin/ op.zip && rm op.zip
   elif [[ "$OSTYPE" == "darwin"* ]]; then
     curl -sSfLo op.pkg "https://cache.agilebits.com/dist/1P/op2/pkg/v2.10.0-beta.02/op_apple_universal_v2.10.0-beta.02.pkg"
     sudo installer -pkg op.pkg -target /usr/local/bin/ && rm op.pkg
